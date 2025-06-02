@@ -86,15 +86,21 @@ const cartReducer = (state, action) => {
           .filter((i) => i.quantity > 0), // Remove items with 0 quantity
       };
     }
-    case 'REMOVE_ITEM': {
-      // Remove specific item completely from cart regardless of quantity
-      return {
-        ...state,
-        items: state.items.filter(
-          (i) => !(i.id === action.payload.id && (i.source === action.payload.source || (!i.source && !action.payload.source)))
-        ),
-      };
-    }
+ case 'REMOVE_ITEM': {
+  return {
+    ...state,
+    items: state.items.filter(
+      (i) =>
+        !(i.id === action.payload.id &&
+          (
+            (i.source && action.payload.source && i.source === action.payload.source) ||
+            (!i.source && !action.payload.source)
+          )
+        )
+    ),
+  };
+}
+
     default: {
       // Return current state for unknown action types
       return state;
