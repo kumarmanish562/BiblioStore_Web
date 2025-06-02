@@ -3,10 +3,11 @@ import { Routes, Route } from 'react-router-dom';
 import Home from './pages/Home/Home';
 import Cart from './pages/Cart/Cart';
 import About from './pages/About/About';
-import Book from './pages/Book/Book';
+
 import Contact from './pages/Contact/Contact';
 import Login from './components/Login/Login';
 import SignUp from './components/SignUp/SignUp';
+import Book from './pages/Book/Book';
 
 const App = () => {
   return (
@@ -14,7 +15,8 @@ const App = () => {
       <Route path="/" element={<Home />} />
       <Route path="/cart" element={<Cart />} />
       <Route path='/about' element={<About />} />
-      <Route path="/book" element={<Book />} />
+      <Route path='/books' element={<Book />} />
+      
       <Route path="/contact" element={<Contact />} />
 
       
