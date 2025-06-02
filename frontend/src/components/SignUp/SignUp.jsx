@@ -264,7 +264,7 @@ const SignUp = () => {
               <input
                 type={showpassword ? "text" : "password"}
                 id="password"
-                className={`${Signup.input} ${errors.password && isSubmitted ? 'border-red-500' : ''}`}
+                className={`${Signup.passwordInput} ${errors.password && isSubmitted ? 'border-red-500' : ''}`}
                 placeholder="••••••••"
                 value={formData.password}
                 onChange={(e) => handleInputChange('password', e.target.value)}
